@@ -3,10 +3,10 @@ const axios = require('axios');
 const wApiKey = process.env.WEATHER_API_KEY;
 
 const weather = {
-    Weather : async function(cityName){
+    Weather : async function(cityName, lang){
     
         try{
-        var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${wApiKey}&units=metric`;
+        var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=${lang}&appid=${wApiKey}&units=metric`;
         var req = axios.get(url);
         var res = await req;
     
