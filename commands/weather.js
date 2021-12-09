@@ -15,10 +15,8 @@ const weather = {
             temp: res.data.main.temp,
             feel: res.data.main.feels_like
         }
-    
         return {desc: desc}
     } catch( error ){
-        //console.log('BAD QUERRY', error)
         const desc = {
             descp: "unavailable",
             temp: "unavailable",
