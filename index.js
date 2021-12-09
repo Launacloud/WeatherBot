@@ -21,7 +21,7 @@ bot.on('messageCreate', async (msg) => {
     Weather(city).then(weather => {        
       if(weather.desc.descp=="unavailable"){
         msg.channel.send(
-          "Cidade invalida"
+          "Invalid City"
         )
       }else{
         msg.channel.send(
