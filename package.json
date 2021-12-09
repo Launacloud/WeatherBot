@@ -1,0 +1,26 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrowatanabe/discord-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrowatanabe/discord-bot/issues"
+  },
+  "homepage": "https://github.com/leandrowatanabe/discord-bot#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "public-ip": "^4.0.4"
+  }
+}
