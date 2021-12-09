@@ -18,7 +18,6 @@ bot.on('messageCreate', async (msg) => {
   const foundWord = targets.find((target) => msg.content.includes(target));
   if (foundWord == '!weather'){
     const [,city] = msg.content.replace(/\s+/, '\x01').split('\x01')
-    console.log(city)
     Weather(city).then(weather => {        
       if(weather.desc.descp=="unavailable"){
         msg.channel.send(
