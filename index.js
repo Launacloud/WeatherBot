@@ -20,8 +20,14 @@ bot.on('messageCreate', async (msg) => {
   if (foundWord == '!weather'){
     const [,city] = msg.content.replace(/\s+/, '\x01').split('\x01')
     Weather(city).then(weather => {        
-      msg.channel.send(
-      `Now it is ${weather.desc.descp} in ${city} \nThe temperature is ${weather.desc.temp} but feels like ${weather.desc.feel}`
-      );})
+      if(weather.desc.descp=="unavailable"){
+        msg.channel.send(
+          "Cidade invalida"
+        )
+      }else{
+        msg.channel.send(
+          `Now it is ${weather.desc.descp} in ${city} \nThe temperature is ${weather.desc.temp} but feels like ${weather.desc.feel}`
+        )};
+    })
   }
 });

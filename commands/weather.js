@@ -5,6 +5,7 @@ const wApiKey = process.env.WEATHER_API_KEY;
 const weather = {
     Weather : async function(cityName){
     
+        try{
         var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${wApiKey}&units=metric`;
         var req = axios.get(url);
         var res = await req;
@@ -16,6 +17,15 @@ const weather = {
         }
     
         return {desc: desc}
+    } catch( error ){
+        //console.log('BAD QUERRY', error)
+        const desc = {
+            descp: "unavailable",
+            temp: "unavailable",
+            feel: "unavailable"
+        }
+        return {desc: desc}
+    }
     }
 }
 
