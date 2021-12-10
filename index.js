@@ -17,7 +17,7 @@ bot.on('messageCreate', async (msg) => {
   
   const foundWord = targets.find((target) => msg.content.includes(target));
   
-  if (foundWord == '!weather'||'!clima'){
+  if (foundWord && ('!weather'||'!clima')){
     const [lang,city] = msg.content.replace(/\s+/, '\x01').split('\x01')
     if(lang == '!clima'){
       Weather(city, "pt_br").then(weather => {        
