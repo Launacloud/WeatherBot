@@ -2,9 +2,8 @@ require('dotenv').config();
 const { Client, Intents } = require('discord.js');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const TOKEN = process.env.TOKEN;
-const targets = ['sad', 'angry', 'unhappy', 'miserable', 'down', '!weather', '!clima'];
+const targets = ['!weather', '!clima'];
 
-const { RandomQuote } = require('./commands/quote.js');
 const { Weather } = require('./commands/weather.js');
 
 bot.login(TOKEN); 
@@ -42,11 +41,5 @@ bot.on('messageCreate', async (msg) => {
           `${weather.desc.descp} in ${city} \nThe temperature is ${weather.desc.temp} but feels like ${weather.desc.feel}`
         )};
     })
-  }}else {
-    RandomQuote().then(quote=>{
-        msg.channel.send(
-        `Don't be ${foundWord}\n${quote.author} once said:\n${quote.text}`
-        );
-      })
-    }
+  }}
 });
